@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Studi Pendidikan Fisika - UIN Sunan Kalijaga Yogyakarta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       PORTAL UTAMA — MODERN PROFESSIONAL PORTAL
+       Theme: White Dominant, Teal #01747b, Orange #f08619
+       Typography: Plus Jakarta Sans
+       ============================================================ */
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --orange: #f08619;
+      --orange-hover: #d97510;
+      --orange-soft: #fff6ec;
+      --orange-glow: rgba(240, 134, 25, 0.16);
+      --teal: #01747b;
+      --teal-dark: #015459;
+      --teal-deep: #013b3f;
+      --teal-soft: #eaf6f7;
+      --teal-glow: rgba(1, 116, 123, 0.15);
+      --white: #ffffff;
+      --bg-page: #f8fafc;
+      --card-bg: #ffffff;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #8292a4;
+      --border: #e2e8f0;
+      --border-accent: #cde7e9;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-card: 0 6px 24px -4px rgba(15, 23, 42, 0.07), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+      --shadow-hover: 0 20px 40px -8px rgba(1, 116, 123, 0.18), 0 6px 16px rgba(0, 0, 0, 0.05);
+      --radius-sm: 10px;
+      --radius: 18px;
+      --radius-lg: 26px;
+      --smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top Gradient Accent */
+    .top-gradient-bar {
+      height: 4px;
+      background: linear-gradient(90deg, var(--teal), var(--orange), var(--teal-dark), var(--orange));
+      background-size: 300% 100%;
+      animation: gradientShift 8s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* ============================================================
+       TOP NAVBAR
+       ============================================================ */
+    .portal-nav {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .portal-nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 4px 14px var(--teal-glow);
+    }
+
+    .brand-text h1 {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.2;
+      letter-spacing: -0.3px;
+    }
+
+    .brand-text p {
+      font-size: 11.5px;
+      color: var(--orange);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-btn {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.2s var(--smooth);
+    }
+
+    .nav-btn:hover {
+      color: var(--teal);
+      background: var(--teal-soft);
+    }
+
+    /* ============================================================
+       HERO SECTION
+       ============================================================ */
+    .portal-hero {
+      position: relative;
+      background: radial-gradient(100% 85% at 50% 0%, #edf7f8 0%, var(--bg-page) 100%);
+      padding: 72px 0 60px;
+      text-align: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .portal-hero::before {
+      content: "";
+      position: absolute;
+      top: -140px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(1, 116, 123, 0.09) 0%, rgba(240, 134, 25, 0.05) 50%, transparent 80%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--teal);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--orange);
+      border-radius: 50%;
+    }
+
+    .portal-hero h2 {
+      font-size: clamp(34px, 5.2vw, 52px);
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.18;
+      letter-spacing: -1.2px;
+      max-width: 840px;
+      margin: 0 auto 20px;
+    }
+
+    .portal-hero h2 span.teal {
+      background: linear-gradient(135deg, var(--teal) 0%, #009aa4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .portal-hero h2 span.orange {
+      color: var(--orange);
+    }
+
+    .hero-lead {
+      font-size: clamp(16px, 2.3vw, 19px);
+      color: var(--text-secondary);
+      line-height: 1.65;
+      max-width: 760px;
+      margin: 0 auto 36px;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .stat-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 10px 22px;
+      border-radius: 40px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stat-pill svg {
+      color: var(--teal);
+    }
+
+    /* ============================================================
+       CORE PORTAL MODULES (3 GRAND CARDS)
+       ============================================================ */
+    .portal-modules {
+      padding: 68px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 52px;
+    }
+
+    .section-tag {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.25;
+      letter-spacing: -0.8px;
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      font-size: 15.5px;
+      color: var(--text-secondary);
+    }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .module-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 38px 30px 32px;
+      box-shadow: var(--shadow-card);
+      transition: all 0.35s var(--smooth);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .module-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: transparent;
+      transition: all 0.3s var(--smooth);
+    }
+
+    .module-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--border-accent);
+    }
+
+    .module-card.teal:hover::before {
+      background: var(--teal);
+    }
+
+    .module-card.orange:hover::before {
+      background: var(--orange);
+    }
+
+    .module-card.dark:hover::before {
+      background: var(--text-primary);
+    }
+
+    .card-icon-wrap {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 24px;
+      transition: all 0.3s var(--smooth);
+    }
+
+    .module-card.teal .card-icon-wrap {
+      background: var(--teal-soft);
+      color: var(--teal);
+    }
+
+    .module-card.orange .card-icon-wrap {
+      background: var(--orange-soft);
+      color: var(--orange);
+    }
+
+    .module-card.dark .card-icon-wrap {
+      background: #f1f5f9;
+      color: var(--text-primary);
+    }
+
+    .module-card:hover .card-icon-wrap {
+      transform: scale(1.1) rotate(4deg);
+    }
+
+    .module-card.teal:hover .card-icon-wrap {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .module-card.orange:hover .card-icon-wrap {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .module-card.dark:hover .card-icon-wrap {
+      background: var(--text-primary);
+      color: var(--white);
+    }
+
+    .card-badge {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .card-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .card-summary {
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 28px;
+      flex-grow: 1;
+    }
+
+    .card-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .card-points li {
+      font-size: 13px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-points li::before {
+      content: "•";
+      color: var(--teal);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .card-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--teal);
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      transition: all 0.25s var(--smooth);
+    }
+
+    .module-card.orange .card-action {
+      color: var(--orange);
+    }
+
+    .module-card.dark .card-action {
+      color: var(--text-primary);
+    }
+
+    .module-card:hover .card-action svg {
+      transform: translateX(6px);
+    }
+
+    .card-action svg {
+      transition: transform 0.25s var(--smooth);
+    }
+
+    /* ============================================================
+       ABOUT / VALUE BANNER
+       ============================================================ */
+    .about-banner {
+      background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal-dark) 60%, var(--teal) 100%);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 56px 48px;
+      margin-bottom: 68px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(1, 84, 89, 0.2);
+    }
+
+    .about-banner::before {
+      content: "";
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(240, 134, 25, 0.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .about-content {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+    }
+
+    .about-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 5px 16px;
+      border-radius: 20px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fed7aa;
+      margin-bottom: 16px;
+    }
+
+    .about-content h3 {
+      font-size: clamp(24px, 3.5vw, 32px);
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .about-content p {
+      font-size: 15.5px;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .portal-footer {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 56px 0 36px;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-page);
+      border: 1px solid var(--border);
+      padding: 9px 20px;
+      border-radius: 50px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.25s var(--smooth);
+    }
+
+    .footer-links a:hover {
+      background: var(--teal-soft);
+      border-color: var(--teal);
+      color: var(--teal);
+      transform: translateY(-2px);
+    }
+
+    .footer-address {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       FADE IN ON SCROLL
+       ============================================================ */
+    .fade-item {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.55s var(--smooth), transform 0.55s var(--smooth);
+    }
+
+    .fade-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 960px) {
+      .module-grid {
+        grid-template-columns: 1fr;
+        max-width: 540px;
+        margin: 0 auto;
+      }
+      .about-banner {
+        padding: 40px 28px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .portal-nav-inner {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .portal-hero {
+        padding: 50px 0 44px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Gradient Accent -->
+  <div class="top-gradient-bar"></div>
+
+  <!-- Sticky Navbar -->
+  <nav class="portal-nav">
+    <div class="portal-nav-inner">
+      <a href="#" class="brand">
+        <div class="brand-icon">
+          <!-- Science / Atom Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(45 12 12)"></ellipse>
+            <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-45 12 12)"></ellipse>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>Pendidikan Fisika</h1>
+          <p>FITK UIN Sunan Kalijaga Yogyakarta</p>
+        </div>
+      </a>
+
+      <div class="nav-menu">
+        <a href="./visi keilmuan/index.html" class="nav-btn">Visi Keilmuan</a>
+        <a href="./struktur/index.html" class="nav-btn">Struktur</a>
+        <a href="./sejarah/index.html" class="nav-btn">Sejarah</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+  <header class="portal-hero">
+    <div class="container">
+      <div class="hero-badge fade-item">
+        <span class="badge-dot"></span>
+        <span>Portal Resmi Program Studi</span>
+      </div>
+
+      <h2 class="fade-item delay-1">
+        Pendidikan Fisika <span class="teal">UIN Sunan Kalijaga</span> <span class="orange">Yogyakarta</span>
+      </h2>
+
+      <p class="hero-lead fade-item delay-2">
+        Mencetak sarjana pendidikan fisika yang unggul, profesional, inovatif-inklusif, adaptif terhadap perkembangan teknologi modern, dan berwawasan nilai-nilai keislaman.
+      </p>
+
+      <div class="hero-stats fade-item delay-3">
+        <div class="stat-pill">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span>Akreditasi Unggul (LAMDIK)</span>
+        </div>
+        <div class="stat-pill">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Berdiri Sejak 1999</span>
+        </div>
+        <div class="stat-pill">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+          <span>Integrasi-Interkoneksi</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       3 CORE MODULES (CARDS)
+       ============================================================ -->
+  <section class="portal-modules">
+    <div class="container">
+      <div class="section-head fade-item">
+        <span class="section-tag">Menu Utama Website</span>
+        <h3 class="section-title">Akses Seluruh Modul Program Studi</h3>
+        <p class="section-desc">Pilih modul di bawah ini untuk melihat detail visi, struktur organisasi kepengurusan, atau sejarah rekam jejak kurikulum.</p>
+      </div>
+
+      <div class="module-grid">
+        <!-- Card 1: Visi Keilmuan -->
+        <a href="./visi keilmuan/index.html" class="module-card teal fade-item delay-1">
+          <div class="card-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+          </div>
+          <span class="card-badge">Arah &amp; Filosofi</span>
+          <h4 class="card-title">Visi Keilmuan</h4>
+          <p class="card-summary">
+            Eksplorasi rumusan visi keilmuan 2034, 6 pilar penopang (berkelanjutan, inklusif, adaptif teknologi, potensi lokal, islami, bereputasi global), dan profil lulusan sarjana.
+          </p>
+          <ul class="card-points">
+            <li>Rumusan Visi Resmi 2034</li>
+            <li>Paradigma Integrasi Sains &amp; Nilai Islam</li>
+            <li>Dukungan Multi-Bahasa (ID / EN)</li>
+          </ul>
+          <div class="card-action">
+            <span>Buka Visi Keilmuan</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Card 2: Struktur Organisasi -->
+        <a href="./struktur/index.html" class="module-card orange fade-item delay-2">
+          <div class="card-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="6" height="6" x="9" y="2" rx="1"/><rect width="6" height="6" x="2" y="16" rx="1"/><rect width="6" height="6" x="16" y="16" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>
+          </div>
+          <span class="card-badge">Tata Kelola &amp; Pimpinan</span>
+          <h4 class="card-title">Struktur Organisasi</h4>
+          <p class="card-summary">
+            Diagram hierarki kepemimpinan mulai dari Rektor, Dekanat FITK, Pimpinan Program Studi, dosen pengajar, kepala laboratorium fisika, hingga tim pengelola jurnal prodi.
+          </p>
+          <ul class="card-points">
+            <li>Bagan Struktur Organisasi Interaktif</li>
+            <li>Profil Pimpinan &amp; Dosen Pengampu</li>
+            <li>Unit Laboratorium &amp; Pengelola Jurnal</li>
+          </ul>
+          <div class="card-action">
+            <span>Buka Struktur Organisasi</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Card 3: Sejarah & Kurikulum -->
+        <a href="./sejarah/index.html" class="module-card dark fade-item delay-3">
+          <div class="card-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+          </div>
+          <span class="card-badge">Historis &amp; Akademik</span>
+          <h4 class="card-title">Sejarah &amp; Kurikulum</h4>
+          <p class="card-summary">
+            Rekam jejak historis berdirinya program studi dari embrio Tadris IPA 1999 hingga meraih predikat akreditasi Unggul, dilengkapi kurikulum dan dokumentasi kegiatan.
+          </p>
+          <ul class="card-points">
+            <li>Milestone Perkembangan 1999 – Sekarang</li>
+            <li>Galeri Foto Dokumentasi &amp; Fasilitas</li>
+            <li>Tersedia Versi Bahasa Inggris (english.html)</li>
+          </ul>
+          <div class="card-action">
+            <span>Buka Sejarah &amp; Kurikulum</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT BANNER
+       ============================================================ -->
+  <div class="container">
+    <div class="about-banner fade-item">
+      <div class="about-content">
+        <span class="about-badge">Paradigma Keilmuan</span>
+        <h3>Menyatukan Sains dan Spiritualitas Tauhid</h3>
+        <p>
+          Melalui pendekatan Integrasi-Interkoneksi, kami mendidik generasi pendidik sains yang tidak hanya menguasai teori fisika dan metodologi pedagogik modern, namun juga memiliki integritas etis, kesadaran ekologis, dan kecintaan pada nilai-nilai kearifan bangsa.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="portal-footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="https://www.youtube.com/@pendidikanfisikauinsunankalijaga" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube Prodi
+        </a>
+        <a href="https://instagram.com/pfis.uinsuka" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.79-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          @pfis.uinsuka
+        </a>
+        <a href="mailto:pfis@uin-suka.ac.id">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          pfis@uin-suka.ac.id
+        </a>
+      </div>
+      <p class="footer-address">
+        <strong>Program Studi Pendidikan Fisika</strong> &bull; Fakultas Ilmu Tarbiyah dan Keguruan (FITK)<br />
+        Universitas Islam Negeri Sunan Kalijaga Yogyakarta &bull; Jl. Marsda Adisucipto, Yogyakarta 55281
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var fadeItems = document.querySelectorAll(".fade-item");
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        fadeItems.forEach(function (el) { observer.observe(el); });
+      } else {
+        fadeItems.forEach(function (el) { el.classList.add("visible"); });
+      }
+    });
+  </script>
+</body>
+</html>
