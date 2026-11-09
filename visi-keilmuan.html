@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visi Keilmuan - Pendidikan Fisika UIN Sunan Kalijaga Yogyakarta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ============================================================
+       VISI KEILMUAN — MODERN ELEGANT DESIGN
+       Theme: White Dominant, Teal #01747b, Orange #f08619
+       Typography: Plus Jakarta Sans
+       ============================================================ */
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --orange: #f08619;
+      --orange-hover: #d97510;
+      --orange-glow: rgba(240, 134, 25, 0.18);
+      --orange-soft: #fff6ec;
+      --teal: #01747b;
+      --teal-dark: #015459;
+      --teal-deep: #013b3f;
+      --teal-soft: #eaf6f7;
+      --teal-glow: rgba(1, 116, 123, 0.15);
+      --white: #ffffff;
+      --bg-page: #f8fafc;
+      --card-bg: #ffffff;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #8292a4;
+      --border: #e2e8f0;
+      --border-accent: #cde7e9;
+      --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.04);
+      --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+      --shadow-hover: 0 16px 36px -4px rgba(1, 116, 123, 0.16), 0 4px 12px rgba(0, 0, 0, 0.04);
+      --radius-sm: 10px;
+      --radius: 16px;
+      --radius-lg: 24px;
+      --ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+      --smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Container */
+    .vk-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ============================================================
+       TOP SLIDING ACCENT BAR & NAV BANNER
+       ============================================================ */
+    .top-gradient-bar {
+      height: 4px;
+      background: linear-gradient(90deg, var(--teal), var(--orange), var(--teal-dark), var(--orange));
+      background-size: 300% 100%;
+      animation: gradientShift 8s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* Top Quick Navigation */
+    .vk-nav {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: all 0.3s var(--smooth);
+    }
+
+    .vk-nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 24px;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .vk-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .vk-brand-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 4px 12px var(--teal-glow);
+    }
+
+    .vk-brand-text h2 {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.2;
+      letter-spacing: -0.2px;
+    }
+
+    .vk-brand-text span {
+      font-size: 11px;
+      color: var(--orange);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .vk-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .vk-nav-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: all 0.2s var(--smooth);
+    }
+
+    .vk-nav-link:hover {
+      color: var(--teal);
+      background: var(--teal-soft);
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      background: #edf2f7;
+      border-radius: 30px;
+      padding: 3px;
+      margin-left: 8px;
+    }
+
+    .lang-btn {
+      border: none;
+      background: none;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.25s var(--smooth);
+    }
+
+    .lang-btn.active {
+      background: var(--teal);
+      color: var(--white);
+      box-shadow: 0 2px 6px rgba(1, 116, 123, 0.3);
+    }
+
+    /* ============================================================
+       HERO HEADER SECTION
+       ============================================================ */
+    .vk-hero {
+      position: relative;
+      background: radial-gradient(100% 80% at 50% 0%, #f0f9fa 0%, var(--bg-page) 100%);
+      padding: 68px 0 56px;
+      text-align: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .vk-hero::before {
+      content: "";
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(1, 116, 123, 0.08) 0%, rgba(240, 134, 25, 0.04) 50%, transparent 80%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .vk-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .vk-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--teal-soft);
+      border: 1px solid var(--border-accent);
+      color: var(--teal);
+      padding: 7px 18px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      box-shadow: 0 2px 8px var(--teal-glow);
+    }
+
+    .vk-badge-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--orange);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+
+    .vk-hero h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.18;
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+    }
+
+    .vk-hero h1 span.accent {
+      background: linear-gradient(135deg, var(--teal) 0%, #009aa4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .vk-hero h1 span.orange {
+      color: var(--orange);
+      -webkit-text-fill-color: var(--orange);
+    }
+
+    .vk-hero p.lead {
+      font-size: clamp(16px, 2.2vw, 19px);
+      color: var(--text-secondary);
+      line-height: 1.65;
+      font-weight: 400;
+      max-width: 760px;
+      margin: 0 auto 36px;
+    }
+
+    /* Highlight Tags */
+    .vk-hero-tags {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .vk-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 9px 18px;
+      border-radius: 40px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s var(--smooth);
+    }
+
+    .vk-tag svg {
+      color: var(--teal);
+      font-size: 16px;
+    }
+
+    .vk-tag:hover {
+      border-color: var(--orange);
+      color: var(--orange-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--orange-glow);
+    }
+
+    /* ============================================================
+       GRAND VISION CARD (THE CORE STATEMENT)
+       ============================================================ */
+    .vk-statement-section {
+      padding: 48px 0 32px;
+      margin-top: -30px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .vk-statement-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(1, 116, 123, 0.16);
+      box-shadow: 0 12px 40px -8px rgba(1, 116, 123, 0.12), 0 4px 16px rgba(0,0,0,0.03);
+      padding: 44px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vk-statement-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--orange) 0%, var(--teal) 100%);
+    }
+
+    .vk-statement-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .vk-statement-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+
+    .vk-statement-label-badge {
+      background: var(--teal);
+      color: var(--white);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+    }
+
+    .vk-target-year {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange-soft);
+      border: 1px solid rgba(240, 134, 25, 0.3);
+      color: var(--orange-hover);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 6px 16px;
+      border-radius: 30px;
+    }
+
+    .vk-quote-body {
+      position: relative;
+      padding: 6px 0 16px 36px;
+    }
+
+    .vk-quote-mark {
+      position: absolute;
+      left: -6px;
+      top: -24px;
+      font-size: 90px;
+      color: var(--teal);
+      opacity: 0.12;
+      font-family: Georgia, serif;
+      line-height: 1;
+      user-select: none;
+    }
+
+    .vk-quote-text {
+      font-size: clamp(20px, 2.7vw, 25px);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.55;
+      letter-spacing: -0.3px;
+      margin-bottom: 20px;
+    }
+
+    .vk-quote-text mark {
+      background: rgba(240, 134, 25, 0.12);
+      color: var(--text-primary);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 800;
+    }
+
+    .vk-quote-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .vk-source-info {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .vk-source-info strong {
+      color: var(--text-secondary);
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--teal-soft);
+      border: 1px solid var(--border-accent);
+      color: var(--teal);
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s var(--smooth);
+    }
+
+    .copy-btn:hover {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    /* ============================================================
+       SECTION TITLE COMPONENT
+       ============================================================ */
+    .section-title-wrap {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+
+    .section-category {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(26px, 3.5vw, 36px);
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.25;
+      letter-spacing: -0.6px;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       6 CORE PILLARS GRID
+       ============================================================ */
+    .vk-pillars-section {
+      padding: 60px 0;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    .pillar-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-card);
+      transition: all 0.35s var(--smooth);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .pillar-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: transparent;
+      transition: all 0.3s var(--smooth);
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--border-accent);
+    }
+
+    .pillar-card:hover::before {
+      background: linear-gradient(90deg, var(--teal), var(--orange));
+    }
+
+    .pillar-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .pillar-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      transition: all 0.3s var(--smooth);
+    }
+
+    .pillar-icon-box.teal {
+      background: var(--teal-soft);
+      color: var(--teal);
+    }
+
+    .pillar-icon-box.orange {
+      background: var(--orange-soft);
+      color: var(--orange);
+    }
+
+    .pillar-card:hover .pillar-icon-box.teal {
+      background: var(--teal);
+      color: var(--white);
+      transform: scale(1.08) rotate(-4deg);
+    }
+
+    .pillar-card:hover .pillar-icon-box.orange {
+      background: var(--orange);
+      color: var(--white);
+      transform: scale(1.08) rotate(4deg);
+    }
+
+    .pillar-number {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
+
+    .pillar-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+
+    .pillar-desc {
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .pillar-highlights {
+      list-style: none;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .pillar-highlights li {
+      font-size: 13px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.45;
+    }
+
+    .pillar-highlights li::before {
+      content: "✓";
+      color: var(--teal);
+      font-weight: 800;
+      font-size: 13px;
+      margin-top: 1px;
+    }
+
+    /* ============================================================
+       INTEGRASI-INTERKONEKSI BANNER (DISTINGSI KHAS UIN SUKA)
+       ============================================================ */
+    .integrasi-section {
+      padding: 60px 0;
+      background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal-dark) 50%, var(--teal) 100%);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      margin: 40px auto;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(1, 84, 89, 0.25);
+    }
+
+    .integrasi-section::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(240, 134, 25, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .integrasi-inner {
+      padding: 0 44px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .integrasi-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 44px;
+    }
+
+    .integrasi-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #ffd8a8;
+      margin-bottom: 14px;
+    }
+
+    .integrasi-header h2 {
+      font-size: clamp(26px, 3.8vw, 36px);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+      color: var(--white);
+    }
+
+    .integrasi-header p {
+      font-size: 15.5px;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.65;
+    }
+
+    .integrasi-triad {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .triad-box {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: all 0.3s var(--smooth);
+    }
+
+    .triad-box:hover {
+      background: rgba(255, 255, 255, 0.14);
+      transform: translateY(-4px);
+      border-color: var(--orange);
+    }
+
+    .triad-icon {
+      font-size: 28px;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+
+    .triad-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .triad-arabic {
+      font-size: 14px;
+      color: var(--orange);
+      font-weight: 600;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .triad-desc {
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       MISI & TUJUAN SECTION
+       ============================================================ */
+    .misi-tujuan-section {
+      padding: 60px 0;
+    }
+
+    .mt-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .mt-column {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 36px 32px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .mt-column-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--bg-page);
+    }
+
+    .mt-column-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .mt-column-icon.misi {
+      background: var(--teal-soft);
+      color: var(--teal);
+    }
+
+    .mt-column-icon.tujuan {
+      background: var(--orange-soft);
+      color: var(--orange);
+    }
+
+    .mt-column-header h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .mt-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .mt-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .mt-num {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--bg-page);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--teal);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .mt-text {
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .mt-text strong {
+      color: var(--text-primary);
+    }
+
+    /* ============================================================
+       GRADUATE PROFILE / PROFIL LULUSAN
+       ============================================================ */
+    .profile-section {
+      padding: 50px 0 70px;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .profile-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s var(--smooth);
+      position: relative;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--teal);
+    }
+
+    .profile-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--teal-soft);
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+      transition: all 0.3s var(--smooth);
+    }
+
+    .profile-card:hover .profile-icon {
+      background: var(--orange);
+      color: var(--white);
+      transform: rotate(6deg);
+    }
+
+    .profile-role {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .profile-desc {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* ============================================================
+       TARGET ROADMAP / MILESTONES TOWARD 2034
+       ============================================================ */
+    .roadmap-section {
+      padding: 60px 0;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+      margin-bottom: 60px;
+    }
+
+    .roadmap-timeline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      position: relative;
+      margin-top: 36px;
+      padding: 0 32px;
+    }
+
+    .roadmap-timeline::before {
+      content: "";
+      position: absolute;
+      top: 40px;
+      left: 10%;
+      right: 10%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--teal-soft), var(--teal), var(--orange));
+      z-index: 1;
+    }
+
+    .roadmap-item {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .roadmap-node {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 4px solid var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--teal);
+      box-shadow: 0 4px 14px rgba(1, 116, 123, 0.2);
+      margin-bottom: 18px;
+      transition: all 0.3s var(--smooth);
+    }
+
+    .roadmap-item:last-child .roadmap-node {
+      border-color: var(--orange);
+      color: var(--orange);
+      box-shadow: 0 4px 14px rgba(240, 134, 25, 0.3);
+    }
+
+    .roadmap-item:hover .roadmap-node {
+      transform: scale(1.15);
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .roadmap-item:last-child:hover .roadmap-node {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .roadmap-phase {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--orange);
+      margin-bottom: 6px;
+    }
+
+    .roadmap-year {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .roadmap-summary {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      max-width: 280px;
+    }
+
+    /* ============================================================
+       NAVIGATION FOOTER & CROSS LINKS
+       ============================================================ */
+    .vk-cross-nav {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 60px;
+    }
+
+    .cross-nav-info h4 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .cross-nav-info p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+
+    .cross-nav-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-page {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s var(--smooth);
+    }
+
+    .btn-page.primary {
+      background: var(--teal);
+      color: var(--white);
+      box-shadow: 0 4px 12px var(--teal-glow);
+    }
+
+    .btn-page.primary:hover {
+      background: var(--teal-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-page.secondary {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .btn-page.secondary:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================================
+       MAIN FOOTER
+       ============================================================ */
+    .vk-footer {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 48px 0 36px;
+      text-align: center;
+    }
+
+    .footer-social-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-social-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-page);
+      border: 1px solid var(--border);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.25s var(--smooth);
+    }
+
+    .footer-social-links a:hover {
+      background: var(--teal-soft);
+      border-color: var(--teal);
+      color: var(--teal);
+      transform: translateY(-2px);
+    }
+
+    .footer-copyright {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       SCROLL ANIMATIONS (Fade-In Effect)
+       ============================================================ */
+    .vk-fade {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s var(--smooth), transform 0.6s var(--smooth);
+    }
+
+    .vk-fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .vk-delay-1 { transition-delay: 0.1s; }
+    .vk-delay-2 { transition-delay: 0.2s; }
+    .vk-delay-3 { transition-delay: 0.3s; }
+    .vk-delay-4 { transition-delay: 0.4s; }
+
+    /* ============================================================
+       RESPONSIVE BREAKPOINTS
+       ============================================================ */
+    @media (max-width: 900px) {
+      .mt-grid {
+        grid-template-columns: 1fr;
+      }
+      .roadmap-timeline {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .roadmap-timeline::before {
+        display: none;
+      }
+      .vk-statement-card {
+        padding: 32px 24px;
+      }
+      .vk-quote-body {
+        padding-left: 0;
+      }
+      .vk-quote-mark {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .vk-nav-inner {
+        flex-direction: column;
+        gap: 14px;
+      }
+      .vk-cross-nav {
+        flex-direction: column;
+        text-align: center;
+      }
+      .cross-nav-buttons {
+        justify-content: center;
+      }
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+      .integrasi-inner {
+        padding: 0 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Gradient Accent -->
+  <div class="top-gradient-bar"></div>
+
+  <!-- Sticky Navigation Bar -->
+  <nav class="vk-nav">
+    <div class="vk-nav-inner">
+      <a href="#" class="vk-brand">
+        <div class="vk-brand-icon">
+          <!-- Atom / Science SVG Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M12 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9 9 9 0 0 0-9 9 9 9 0 0 0 9 9Z" stroke-dasharray="2 3"></path>
+            <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(45 12 12)"></ellipse>
+            <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-45 12 12)"></ellipse>
+          </svg>
+        </div>
+        <div class="vk-brand-text">
+          <h2 data-id="brand-title">Pendidikan Fisika</h2>
+          <span data-id="brand-sub">UIN Sunan Kalijaga Yogyakarta</span>
+        </div>
+      </a>
+
+      <div class="vk-nav-links">
+        <a href="#pilar" class="vk-nav-link" data-id="nav-pilar">6 Pilar Visi</a>
+        <a href="#integrasi" class="vk-nav-link" data-id="nav-integrasi">Integrasi-Interkoneksi</a>
+        <a href="#misi-tujuan" class="vk-nav-link" data-id="nav-misi">Misi &amp; Tujuan</a>
+        <a href="#profil" class="vk-nav-link" data-id="nav-profil">Profil Lulusan</a>
+        
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+          <button id="btn-id" class="lang-btn active" onclick="switchLanguage('id')">ID</button>
+          <button id="btn-en" class="lang-btn" onclick="switchLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+  <header class="vk-hero">
+    <div class="vk-container vk-hero-inner">
+      <div class="vk-badge vk-fade">
+        <span class="vk-badge-dot"></span>
+        <span data-id="hero-badge">Landasan Filosofis &amp; Arah Keilmuan</span>
+      </div>
+
+      <h1 class="vk-fade vk-delay-1">
+        <span data-id="hero-title-1">Visi Keilmuan</span><br />
+        <span class="accent" data-id="hero-title-2">Pendidikan Fisika</span> <span class="orange">2034</span>
+      </h1>
+
+      <p class="lead vk-fade vk-delay-2" data-id="hero-lead">
+        Mengukuhkan fondasi sains fisika yang berkelanjutan, transformatif-inklusif, dan adaptif terhadap kecerdasan teknologi modern, berakar kuat pada kearifan potensi lokal, serta bernafaskan nilai-nilai luhur keislaman.
+      </p>
+
+      <div class="vk-hero-tags vk-fade vk-delay-3">
+        <div class="vk-tag">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span data-id="tag-akreditasi">Akreditasi Unggul (LAMDIK)</span>
+        </div>
+        <div class="vk-tag">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+          <span data-id="tag-paradigma">Paradigma Integrasi-Interkoneksi</span>
+        </div>
+        <div class="vk-tag">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span data-id="tag-reputasi">Reputasi Global 2034</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       GRAND VISION CARD (THE CORE STATEMENT)
+       ============================================================ -->
+  <section class="vk-statement-section">
+    <div class="vk-container">
+      <div class="vk-statement-card vk-fade">
+        <div class="vk-statement-header">
+          <div class="vk-statement-label">
+            <span class="vk-statement-label-badge">RESMI</span>
+            <span data-id="statement-label">Rumusan Visi Keilmuan Program Studi</span>
+          </div>
+          <div class="vk-target-year">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span data-id="target-badge">Menuju Capaian 2034</span>
+          </div>
+        </div>
+
+        <div class="vk-quote-body">
+          <div class="vk-quote-mark">&ldquo;</div>
+          <blockquote class="vk-quote-text" id="quoteText" data-id="core-vision-text">
+            &ldquo;Mengembangkan keilmuan pendidikan fisika yang <mark>berkelanjutan</mark>, <mark>inovatif-inklusif</mark>, <mark>adaptif teknologi</mark>, dan berorientasi pada <mark>potensi lokal</mark>, yang dijiwai oleh <mark>nilai-nilai keislaman</mark> untuk mewujudkan peradaban yang unggul dan <mark>bereputasi global</mark> pada tahun 2034.&rdquo;
+          </blockquote>
+
+          <div class="vk-quote-footer">
+            <div class="vk-source-info" data-id="quote-source">
+              Ditetapkan oleh: <strong>Program Studi Pendidikan Fisika</strong> &bull; Fakultas Ilmu Tarbiyah dan Keguruan, UIN Sunan Kalijaga Yogyakarta
+            </div>
+            <button class="copy-btn" onclick="copyVisionText()" id="btnCopy">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              <span id="copyBtnText">Salin Teks Visi</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6 CORE PILLARS SECTION
+       ============================================================ -->
+  <section class="vk-pillars-section" id="pilar">
+    <div class="vk-container">
+      <div class="section-title-wrap vk-fade">
+        <span class="section-category" data-id="pillar-cat">Bedah Makna</span>
+        <h2 class="section-title" data-id="pillar-title">6 Pilar Penopang Visi Keilmuan</h2>
+        <p class="section-subtitle" data-id="pillar-subtitle">
+          Setiap frasa dalam visi keilmuan diterjemahkan ke dalam manifestasi akademik, kurikulum, dan kultur riset yang terukur.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <!-- Pilar 1 -->
+        <div class="pillar-card vk-fade vk-delay-1">
+          <div class="pillar-top">
+            <div class="pillar-icon-box teal">
+              <!-- Leaf / Sustainability -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+            </div>
+            <span class="pillar-number">PILAR 01</span>
+          </div>
+          <h3 class="pillar-title" data-id="p1-title">Berkelanjutan (Sustainable)</h3>
+          <p class="pillar-desc" data-id="p1-desc">
+            Mengedepankan orientasi keilmuan jangka panjang, prinsip kelestarian lingkungan hidup (*green physics education*), kesadaran energi baru-terbarukan, dan ketahanan ekologis untuk generasi mendatang.
+          </p>
+          <ul class="pillar-highlights">
+            <li data-id="p1-h1">Integrasi isu perubahan iklim &amp; konservasi energi</li>
+            <li data-id="p1-h2">Riset alat laboratorium fisika ramah lingkungan</li>
+            <li data-id="p1-h3">Karakter peduli lingkungan hidup (*eco-pedagogy*)</li>
+          </ul>
+        </div>
+
+        <!-- Pilar 2 -->
+        <div class="pillar-card vk-fade vk-delay-2">
+          <div class="pillar-top">
+            <div class="pillar-icon-box orange">
+              <!-- Heart / Hands / Inclusive -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <span class="pillar-number">PILAR 02</span>
+          </div>
+          <h3 class="pillar-title" data-id="p2-title">Inovatif &amp; Inklusif</h3>
+          <p class="pillar-desc" data-id="p2-desc">
+            Menciptakan strategi dan media pembelajaran fisika yang kreatif, ramah terhadap keberagaman bakat, serta membuka akses luas bagi penyandang disabilitas (*inclusive STEM education*).
+          </p>
+          <ul class="pillar-highlights">
+            <li data-id="p2-h1">Desain pembelajaran adaptif dan diferensiasi</li>
+            <li data-id="p2-h2">Pengembangan media fisika berbasis sensor suara/taktil</li>
+            <li data-id="p2-h3">Kampus ramah difabel &amp; kesetaraan kesempatan belajar</li>
+          </ul>
+        </div>
+
+        <!-- Pilar 3 -->
+        <div class="pillar-card vk-fade vk-delay-3">
+          <div class="pillar-top">
+            <div class="pillar-icon-box teal">
+              <!-- CPU / Tech -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+            </div>
+            <span class="pillar-number">PILAR 03</span>
+          </div>
+          <h3 class="pillar-title" data-id="p3-title">Adaptif Teknologi</h3>
+          <p class="pillar-desc" data-id="p3-desc">
+            Cekatan mengadopsi perkembangan teknologi digital, komputasi sains, IoT, simulator virtual (PhET/Algodoo), dan kecerdasan buatan (AI) untuk memperkaya analisis eksperimen dan pemahaman konsep fisika.
+          </p>
+          <ul class="pillar-highlights">
+            <li data-id="p3-h1">Eksperimen berbasis mikrokontroler &amp; sensor digital</li>
+            <li data-id="p3-h2">Simulasi komputasi fisika berbantuan Python/MATLAB</li>
+            <li data-id="p3-h3">Pengembangan mobile learning &amp; Virtual Reality (VR)</li>
+          </ul>
+        </div>
+
+        <!-- Pilar 4 -->
+        <div class="pillar-card vk-fade vk-delay-1">
+          <div class="pillar-top">
+            <div class="pillar-icon-box orange">
+              <!-- Compass / Local Wisdom -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            </div>
+            <span class="pillar-number">PILAR 04</span>
+          </div>
+          <h3 class="pillar-title" data-id="p4-title">Berorientasi Potensi Lokal</h3>
+          <p class="pillar-desc" data-id="p4-desc">
+            Menggali kearifan lokal Nusantara, fenomena etnofisika (seperti gamelan, arsitektur candi, kapal pinisi, perbatikan), dan sumber daya daerah sebagai konteks pembelajaran sains yang kaya dan bermakna.
+          </p>
+          <ul class="pillar-highlights">
+            <li data-id="p4-h1">Kajian etnofisika pada budaya dan tradisi lokal</li>
+            <li data-id="p4-h2">Pemanfaatan material lokal sebagai alat praktikum</li>
+            <li data-id="p4-h3">Penguatan identitas kebangsaan berbasis kearifan lokal</li>
+          </ul>
+        </div>
+
+        <!-- Pilar 5 -->
+        <div class="pillar-card vk-fade vk-delay-2">
+          <div class="pillar-top">
+            <div class="pillar-icon-box teal">
+              <!-- Book / Crescent / Values -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+            </div>
+            <span class="pillar-number">PILAR 05</span>
+          </div>
+          <h3 class="pillar-title" data-id="p5-title">Dijiwai Nilai-Nilai Keislaman</h3>
+          <p class="pillar-desc" data-id="p5-desc">
+            Menghayati hukum fisika (*sunnatullah*) sebagai ayat kauniyah. Memadukan penguasaan sains objektif dengan etika moral, spiritualitas tauhid, serta kemaslahatan rahmatan lil &lsquo;alamin.
+          </p>
+          <ul class="pillar-highlights">
+            <li data-id="p5-h1">Keterpaduan ayat kauniyah &amp; qauliyah dalam modul</li>
+            <li data-id="p5-h2">Pembentukan akhlak karimah bagi pendidik masa depan</li>
+            <li data-id="p5-h3">Penerapan etika ilmiah berlandaskan maqashid syariah</li>
+          </ul>
+        </div>
+
+        <!-- Pilar 6 -->
+        <div class="pillar-card vk-fade vk-delay-3">
+          <div class="pillar-top">
+            <div class="pillar-icon-box orange">
+              <!-- Globe / Global -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <span class="pillar-number">PILAR 06</span>
+          </div>
+          <h3 class="pillar-title" data-id="p6-title">Unggul &amp; Bereputasi Global</h3>
+          <p class="pillar-desc" data-id="p6-desc">
+            Menjangkau panggung keilmuan internasional melalui karya ilmiah terindeks bereputasi (Scopus/WoS), mobilitas akademik internasional, serta pengakuan akreditasi bertaraf dunia pada 2034.
+          </p>
+          <ul class="pillar-highlights">
+            <li data-id="p6-h1">Kerja sama riset &amp; *visiting professor* mancanegara</li>
+            <li data-id="p6-h2">Publikasi berkala pada jurnal internasional bereputasi</li>
+            <li data-id="p6-h3">Kesiapan lulusan bersaing di bursa kerja global</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       INTEGRASI-INTERKONEKSI BANNER (DISTINGSI KHAS UIN SUKA)
+       ============================================================ -->
+  <section class="vk-container" id="integrasi">
+    <div class="integrasi-section vk-fade">
+      <div class="integrasi-inner">
+        <div class="integrasi-header">
+          <span class="integrasi-badge" data-id="integrasi-badge">Landasan Epistemologi Khas</span>
+          <h2 data-id="integrasi-title">Paradigma Integrasi-Interkoneksi</h2>
+          <p data-id="integrasi-lead">
+            Pendidikan Fisika UIN Sunan Kalijaga menolak dikotomi antara sains dan agama. Kami merajut dialog dinamis antara teks wahyu, sains eksperimental, dan nilai etis kemanusiaan.
+          </p>
+        </div>
+
+        <div class="integrasi-triad">
+          <!-- Hadlarat an-Nash -->
+          <div class="triad-box">
+            <div class="triad-icon">📖</div>
+            <h4 class="triad-title" data-id="triad-1-title">Hadlarah an-Nash</h4>
+            <div class="triad-arabic">حَضَارَةُ النَّصِّ &bull; Budaya Teks</div>
+            <p class="triad-desc" data-id="triad-1-desc">
+              Al-Qur'an dan Hadis sebagai inspirasi moral dan sumber nilai ontologis yang membimbing akal budi manusia untuk meneliti semesta ciptaan-Nya secara rendah hati.
+            </p>
+          </div>
+
+          <!-- Hadlarat al-Ilm -->
+          <div class="triad-box">
+            <div class="triad-icon">🔬</div>
+            <h4 class="triad-title" data-id="triad-2-title">Hadlarah al-'Ilm</h4>
+            <div class="triad-arabic">حَضَارَةُ الْعِلْمِ &bull; Budaya Sains</div>
+            <p class="triad-desc" data-id="triad-2-desc">
+              Metode saintifik objektif, matematika, pengukuran empiris laboratoris, serta verifikasi eksperimental ketat dalam membedah fenomena fisika makro dan mikrokosmos.
+            </p>
+          </div>
+
+          <!-- Hadlarat al-Falsafah -->
+          <div class="triad-box">
+            <div class="triad-icon">⚖️</div>
+            <h4 class="triad-title" data-id="triad-3-title">Hadlarah al-Falsafah</h4>
+            <div class="triad-arabic">حَضَارَةُ الْفَلْسَفَةِ &bull; Budaya Filosofis</div>
+            <p class="triad-desc" data-id="triad-3-desc">
+              Pemberdayaan nalar kritis, etika keilmuan, dan pertimbangan aksiologis demi memajukan harkat martabat manusia, perdamaian, serta keberlanjutan peradaban.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MISI & TUJUAN SECTION
+       ============================================================ -->
+  <section class="misi-tujuan-section" id="misi-tujuan">
+    <div class="vk-container">
+      <div class="section-title-wrap vk-fade">
+        <span class="section-category" data-id="mt-cat">Arah Operasional</span>
+        <h2 class="section-title" data-id="mt-title">Misi &amp; Tujuan Program Studi</h2>
+        <p class="section-subtitle" data-id="mt-subtitle">
+          Langkah terstruktur Tridharma Perguruan Tinggi dalam mewujudkan visi keilmuan secara nyata dan terukur.
+        </p>
+      </div>
+
+      <div class="mt-grid">
+        <!-- Kolom Misi -->
+        <div class="mt-column vk-fade vk-delay-1">
+          <div class="mt-column-header">
+            <div class="mt-column-icon misi">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+            </div>
+            <div>
+              <h3 data-id="misi-heading">Misi Program Studi</h3>
+              <span style="font-size: 13px; color: var(--text-muted);" data-id="misi-subheading">Tridharma &amp; Penguatan Jejaring</span>
+            </div>
+          </div>
+
+          <ul class="mt-list">
+            <li class="mt-item">
+              <span class="mt-num">1</span>
+              <div class="mt-text" data-id="misi-1">
+                <strong>Pendidikan &amp; Pengajaran Berkualitas:</strong> Menyelenggarakan proses pembelajaran fisika yang inovatif, berpusat pada mahasiswa, dan berbasis integrasi-interkoneksi.
+              </div>
+            </li>
+            <li class="mt-item">
+              <span class="mt-num">2</span>
+              <div class="mt-text" data-id="misi-2">
+                <strong>Riset Terapan &amp; Etnofisika:</strong> Mengembangkan penelitian dalam bidang pendidikan fisika yang berorientasi pada kearifan lokal, teknologi mutakhir, dan berdaya saing global.
+              </div>
+            </li>
+            <li class="mt-item">
+              <span class="mt-num">3</span>
+              <div class="mt-text" data-id="misi-3">
+                <strong>Pengabdian Berkelanjutan:</strong> Mengimplementasikan hasil inovasi pendidikan sains kepada guru madrasah/sekolah dan masyarakat luas secara solutif.
+              </div>
+            </li>
+            <li class="mt-item">
+              <span class="mt-num">4</span>
+              <div class="mt-text" data-id="misi-4">
+                <strong>Kemitraan Fungsional:</strong> Membangun kolaborasi strategis dengan institusi pendidikan, alumni, pusat riset, dan mitra industri baik tingkat nasional maupun internasional.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kolom Tujuan -->
+        <div class="mt-column vk-fade vk-delay-2">
+          <div class="mt-column-header">
+            <div class="mt-column-icon tujuan">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div>
+              <h3 data-id="tujuan-heading">Tujuan Pendidikan</h3>
+              <span style="font-size: 13px; color: var(--text-muted);" data-id="tujuan-subheading">Capaian &amp; Dampak Pembelajaran</span>
+            </div>
+          </div>
+
+          <ul class="mt-list">
+            <li class="mt-item">
+              <span class="mt-num">1</span>
+              <div class="mt-text" data-id="tujuan-1">
+                Menghasilkan sarjana pendidikan fisika yang <strong>profesional, berakhlak mulia</strong>, dan memiliki kecakapan pedagogik modern yang inklusif.
+              </div>
+            </li>
+            <li class="mt-item">
+              <span class="mt-num">2</span>
+              <div class="mt-text" data-id="tujuan-2">
+                Menghasilkan produk <strong>media ajar, modul eksperimen, dan teknologi digital</strong> fisika berbasis potensi kearifan lokal yang terdaftar HKI.
+              </div>
+            </li>
+            <li class="mt-item">
+              <span class="mt-num">3</span>
+              <div class="mt-text" data-id="tujuan-3">
+                Meningkatkan publikasi ilmiah dosen dan mahasiswa pada <strong>jurnal nasional terakreditasi (SINTA) dan jurnal internasional bereputasi</strong>.
+              </div>
+            </li>
+            <li class="mt-item">
+              <span class="mt-num">4</span>
+              <div class="mt-text" data-id="tujuan-4">
+                Mewujudkan lulusan yang adaptif, berjiwa <strong>wirausaha edukasi (*edupreneur*)</strong>, dan berintegritas tinggi dalam memajukan peradaban sains.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GRADUATE PROFILE / PROFIL LULUSAN
+       ============================================================ -->
+  <section class="profile-section" id="profil">
+    <div class="vk-container">
+      <div class="section-title-wrap vk-fade">
+        <span class="section-category" data-id="prof-cat">Prospek &amp; Luaran</span>
+        <h2 class="section-title" data-id="prof-title">Profil Lulusan Pendidikan Fisika</h2>
+        <p class="section-subtitle" data-id="prof-subtitle">
+          Lulusan program studi dipersiapkan untuk mengemban peran strategis di era transformasi digital sains dan pendidikan.
+        </p>
+      </div>
+
+      <div class="profile-grid">
+        <!-- Role 1 -->
+        <div class="profile-card vk-fade vk-delay-1">
+          <div class="profile-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M10 2v20"/></svg>
+          </div>
+          <h4 class="profile-role" data-id="role-1-title">Pendidik Fisika Profesional</h4>
+          <p class="profile-desc" data-id="role-1-desc">
+            Guru fisika/sains di SMP/MTs, SMA/MA, atau SMK yang cakap metodologi, menguasai substansi fisika modern, serta berjiwa inklusif dan islami.
+          </p>
+        </div>
+
+        <!-- Role 2 -->
+        <div class="profile-card vk-fade vk-delay-2">
+          <div class="profile-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
+          <h4 class="profile-role" data-id="role-2-title">Peneliti Muda Pendidikan Sains</h4>
+          <p class="profile-desc" data-id="role-2-desc">
+            Peneliti yang kritis dalam mengeksplorasi inovasi media, asesmen komprehensif, etnofisika nusantara, dan kajian integrasi keislaman.
+          </p>
+        </div>
+
+        <!-- Role 3 -->
+        <div class="profile-card vk-fade vk-delay-3">
+          <div class="profile-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <h4 class="profile-role" data-id="role-3-title">Pengembang Media &amp; Alat Lab</h4>
+          <p class="profile-desc" data-id="role-3-desc">
+            Kreator konten digital fisika, pengembang kit eksperimen, laboratorium virtual, dan instrumen pembelajaran berbasis komputasi modern.
+          </p>
+        </div>
+
+        <!-- Role 4 -->
+        <div class="profile-card vk-fade vk-delay-4">
+          <div class="profile-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/></svg>
+          </div>
+          <h4 class="profile-role" data-id="role-4-title">Edupreneur Sains &amp; Teknologi</h4>
+          <p class="profile-desc" data-id="role-4-desc">
+            Wirausahawan bidang edukasi, bimbingan belajar sains, penyedia jasa training laboratorium sains, serta perintis startup media edukasi.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ROADMAP TOWARD 2034
+       ============================================================ -->
+  <section class="vk-container">
+    <div class="roadmap-section vk-fade">
+      <div class="section-title-wrap" style="margin-bottom: 24px;">
+        <span class="section-category" data-id="road-cat">Peta Jalan Strategis</span>
+        <h2 class="section-title" data-id="road-title">Roadmap Pencapaian Visi 2034</h2>
+        <p class="section-subtitle" data-id="road-subtitle">
+          Tahapan transformasi bertahap menuju pengakuan akademik berkelas dunia.
+        </p>
+      </div>
+
+      <div class="roadmap-timeline">
+        <!-- Fase 1 -->
+        <div class="roadmap-item">
+          <div class="roadmap-node">01</div>
+          <span class="roadmap-phase" data-id="phase-1-label">Fase Konsolidasi</span>
+          <h4 class="roadmap-year">2020 – 2024</h4>
+          <p class="roadmap-summary" data-id="phase-1-desc">
+            Pencapaian Akreditasi Unggul, restrukturisasi kurikulum berbasis OBE (Outcome-Based Education), dan penguatan riset etnofisika terintegrasi.
+          </p>
+        </div>
+
+        <!-- Fase 2 -->
+        <div class="roadmap-item">
+          <div class="roadmap-node">02</div>
+          <span class="roadmap-phase" data-id="phase-2-label">Fase Akselerasi Regional</span>
+          <h4 class="roadmap-year">2025 – 2029</h4>
+          <p class="roadmap-summary" data-id="phase-2-desc">
+            Sertifikasi internasional (AUN-QA), peningkatan publikasi Scopus, pertukaran pelajar/dosen se-Asia Tenggara, dan laboratorium terstandar.
+          </p>
+        </div>
+
+        <!-- Fase 3 -->
+        <div class="roadmap-item">
+          <div class="roadmap-node">03</div>
+          <span class="roadmap-phase" data-id="phase-3-label">Fase Reputasi Global</span>
+          <h4 class="roadmap-year">2030 – 2034</h4>
+          <p class="roadmap-summary" data-id="phase-3-desc">
+            Pusat rujukan global keilmuan pendidikan fisika ramah lingkungan dan integrasi keislaman, dengan jejaring universitas kelas dunia.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CROSS-PAGE NAVIGATION
+       ============================================================ -->
+  <div class="vk-container">
+    <div class="vk-cross-nav vk-fade">
+      <div class="cross-nav-info">
+        <h4 data-id="cross-title">Jelajahi Profil Lengkap Program Studi</h4>
+        <p data-id="cross-desc">Ketahui jajaran pengelola prodi dan rekam jejak historis Pendidikan Fisika UIN Sunan Kalijaga.</p>
+      </div>
+      <div class="cross-nav-buttons">
+        <a href="./struktur/index.html" class="btn-page primary">
+          <!-- Structure Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="6" height="6" x="9" y="2" rx="1"/><rect width="6" height="6" x="2" y="16" rx="1"/><rect width="6" height="6" x="16" y="16" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>
+          <span data-id="btn-struktur">Struktur Organisasi</span>
+        </a>
+        <a href="./sejarah prodi/sejarah/index.html" class="btn-page secondary">
+          <!-- History Book Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span data-id="btn-sejarah">Sejarah &amp; Kurikulum</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MAIN FOOTER
+       ============================================================ -->
+  <footer class="vk-footer">
+    <div class="vk-container">
+      <div class="footer-social-links">
+        <a href="https://www.youtube.com/@pendidikanfisikauinsunankalijaga" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube
+        </a>
+        <a href="https://instagram.com/pfis.uinsuka" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.79-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          @pfis.uinsuka
+        </a>
+        <a href="mailto:pfis@uin-suka.ac.id">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          pfis@uin-suka.ac.id
+        </a>
+      </div>
+      <p class="footer-copyright" data-id="footer-copy">
+        &copy; 2026 Program Studi Pendidikan Fisika — Fakultas Ilmu Tarbiyah dan Keguruan<br />
+        Universitas Islam Negeri Sunan Kalijaga Yogyakarta
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       INTERACTION SCRIPT & MULTI-LANGUAGE ENGINE
+       ============================================================ -->
+  <script>
+    // Copy Vision Text Function
+    function copyVisionText() {
+      var text = "Mengembangkan keilmuan pendidikan fisika yang berkelanjutan, inovatif-inklusif, adaptif teknologi, dan berorientasi pada potensi lokal, yang dijiwai oleh nilai-nilai keislaman untuk mewujudkan peradaban yang unggul dan bereputasi global pada tahun 2034.";
+      navigator.clipboard.writeText(text).then(function() {
+        var btnText = document.getElementById('copyBtnText');
+        var original = btnText.innerText;
+        btnText.innerText = "✓ Tersalin!";
+        setTimeout(function() {
+          btnText.innerText = original;
+        }, 2200);
+      });
+    }
+
+    // Translation Dictionary
+    var translations = {
+      id: {
+        "brand-title": "Pendidikan Fisika",
+        "brand-sub": "UIN Sunan Kalijaga Yogyakarta",
+        "nav-pilar": "6 Pilar Visi",
+        "nav-integrasi": "Integrasi-Interkoneksi",
+        "nav-misi": "Misi & Tujuan",
+        "nav-profil": "Profil Lulusan",
+        "hero-badge": "Landasan Filosofis & Arah Keilmuan",
+        "hero-title-1": "Visi Keilmuan",
+        "hero-title-2": "Pendidikan Fisika",
+        "hero-lead": "Mengukuhkan fondasi sains fisika yang berkelanjutan, transformatif-inklusif, dan adaptif terhadap kecerdasan teknologi modern, berakar kuat pada kearifan potensi lokal, serta bernafaskan nilai-nilai luhur keislaman.",
+        "tag-akreditasi": "Akreditasi Unggul (LAMDIK)",
+        "tag-paradigma": "Paradigma Integrasi-Interkoneksi",
+        "tag-reputasi": "Reputasi Global 2034",
+        "statement-label": "Rumusan Visi Keilmuan Program Studi",
+        "target-badge": "Menuju Capaian 2034",
+        "core-vision-text": "“Mengembangkan keilmuan pendidikan fisika yang <mark>berkelanjutan</mark>, <mark>inovatif-inklusif</mark>, <mark>adaptif teknologi</mark>, dan berorientasi pada <mark>potensi lokal</mark>, yang dijiwai oleh <mark>nilai-nilai keislaman</mark> untuk mewujudkan peradaban yang unggul dan <mark>bereputasi global</mark> pada tahun 2034.”",
+        "quote-source": "Ditetapkan oleh: <strong>Program Studi Pendidikan Fisika</strong> • Fakultas Ilmu Tarbiyah dan Keguruan, UIN Sunan Kalijaga Yogyakarta",
+        "pillar-cat": "Bedah Makna",
+        "pillar-title": "6 Pilar Penopang Visi Keilmuan",
+        "pillar-subtitle": "Setiap frasa dalam visi keilmuan diterjemahkan ke dalam manifestasi akademik, kurikulum, dan kultur riset yang terukur.",
+        "p1-title": "Berkelanjutan (Sustainable)",
+        "p1-desc": "Mengedepankan orientasi keilmuan jangka panjang, prinsip kelestarian lingkungan hidup (green physics education), kesadaran energi baru-terbarukan, dan ketahanan ekologis untuk generasi mendatang.",
+        "p1-h1": "Integrasi isu perubahan iklim & konservasi energi",
+        "p1-h2": "Riset alat laboratorium fisika ramah lingkungan",
+        "p1-h3": "Karakter peduli lingkungan hidup (eco-pedagogy)",
+        "p2-title": "Inovatif & Inklusif",
+        "p2-desc": "Menciptakan strategi dan media pembelajaran fisika yang kreatif, ramah terhadap keberagaman bakat, serta membuka akses luas bagi penyandang disabilitas (inclusive STEM education).",
+        "p2-h1": "Desain pembelajaran adaptif dan diferensiasi",
+        "p2-h2": "Pengembangan media fisika berbasis sensor suara/taktil",
+        "p2-h3": "Kampus ramah difabel & kesetaraan kesempatan belajar",
+        "p3-title": "Adaptif Teknologi",
+        "p3-desc": "Cekatan mengadopsi perkembangan teknologi digital, komputasi sains, IoT, simulator virtual (PhET/Algodoo), dan kecerdasan buatan (AI) untuk memperkaya analisis eksperimen dan pemahaman konsep fisika.",
+        "p3-h1": "Eksperimen berbasis mikrokontroler & sensor digital",
+        "p3-h2": "Simulasi komputasi fisika berbantuan Python/MATLAB",
+        "p3-h3": "Pengembangan mobile learning & Virtual Reality (VR)",
+        "p4-title": "Berorientasi Potensi Lokal",
+        "p4-desc": "Menggali kearifan lokal Nusantara, fenomena etnofisika (seperti gamelan, arsitektur candi, kapal pinisi, perbatikan), dan sumber daya daerah sebagai konteks pembelajaran sains yang kaya dan bermakna.",
+        "p4-h1": "Kajian etnofisika pada budaya dan tradisi lokal",
+        "p4-h2": "Pemanfaatan material lokal sebagai alat praktikum",
+        "p4-h3": "Penguatan identitas kebangsaan berbasis kearifan lokal",
+        "p5-title": "Dijiwai Nilai-Nilai Keislaman",
+        "p5-desc": "Menghayati hukum fisika (sunnatullah) sebagai ayat kauniyah. Memadukan penguasaan sains objektif dengan etika moral, spiritualitas tauhid, serta kemaslahatan rahmatan lil ‘alamin.",
+        "p5-h1": "Keterpaduan ayat kauniyah & qauliyah dalam modul",
+        "p5-h2": "Pembentukan akhlak karimah bagi pendidik masa depan",
+        "p5-h3": "Penerapan etika ilmiah berlandaskan maqashid syariah",
+        "p6-title": "Unggul & Bereputasi Global",
+        "p6-desc": "Menjangkau panggung keilmuan internasional melalui karya ilmiah terindeks bereputasi (Scopus/WoS), mobilitas akademik internasional, serta pengakuan akreditasi bertaraf dunia pada 2034.",
+        "p6-h1": "Kerja sama riset & visiting professor mancanegara",
+        "p6-h2": "Publikasi berkala pada jurnal internasional bereputasi",
+        "p6-h3": "Kesiapan lulusan bersaing di bursa kerja global",
+        "integrasi-badge": "Landasan Epistemologi Khas",
+        "integrasi-title": "Paradigma Integrasi-Interkoneksi",
+        "integrasi-lead": "Pendidikan Fisika UIN Sunan Kalijaga menolak dikotomi antara sains dan agama. Kami merajut dialog dinamis antara teks wahyu, sains eksperimental, dan nilai etis kemanusiaan.",
+        "triad-1-title": "Hadlarah an-Nash",
+        "triad-1-desc": "Al-Qur'an dan Hadis sebagai inspirasi moral dan sumber nilai ontologis yang membimbing akal budi manusia untuk meneliti semesta ciptaan-Nya secara rendah hati.",
+        "triad-2-title": "Hadlarah al-'Ilm",
+        "triad-2-desc": "Metode saintifik objektif, matematika, pengukuran empiris laboratoris, serta verifikasi eksperimental ketat dalam membedah fenomena fisika makro dan mikrokosmos.",
+        "triad-3-title": "Hadlarah al-Falsafah",
+        "triad-3-desc": "Pemberdayaan nalar kritis, etika keilmuan, dan pertimbangan aksiologis demi memajukan harkat martabat manusia, perdamaian, serta keberlanjutan peradaban.",
+        "mt-cat": "Arah Operasional",
+        "mt-title": "Misi & Tujuan Program Studi",
+        "mt-subtitle": "Langkah terstruktur Tridharma Perguruan Tinggi dalam mewujudkan visi keilmuan secara nyata dan terukur.",
+        "misi-heading": "Misi Program Studi",
+        "misi-subheading": "Tridharma & Penguatan Jejaring",
+        "misi-1": "<strong>Pendidikan & Pengajaran Berkualitas:</strong> Menyelenggarakan proses pembelajaran fisika yang inovatif, berpusat pada mahasiswa, dan berbasis integrasi-interkoneksi.",
+        "misi-2": "<strong>Riset Terapan & Etnofisika:</strong> Mengembangkan penelitian dalam bidang pendidikan fisika yang berorientasi pada kearifan lokal, teknologi mutakhir, dan berdaya saing global.",
+        "misi-3": "<strong>Pengabdian Berkelanjutan:</strong> Mengimplementasikan hasil inovasi pendidikan sains kepada guru madrasah/sekolah dan masyarakat luas secara solutif.",
+        "misi-4": "<strong>Kemitraan Fungsional:</strong> Membangun kolaborasi strategis dengan institusi pendidikan, alumni, pusat riset, dan mitra industri baik tingkat nasional maupun internasional.",
+        "tujuan-heading": "Tujuan Pendidikan",
+        "tujuan-subheading": "Capaian & Dampak Pembelajaran",
+        "tujuan-1": "Menghasilkan sarjana pendidikan fisika yang <strong>profesional, berakhlak mulia</strong>, dan memiliki kecakapan pedagogik modern yang inklusif.",
+        "tujuan-2": "Menghasilkan produk <strong>media ajar, modul eksperimen, dan teknologi digital</strong> fisika berbasis potensi kearifan lokal yang terdaftar HKI.",
+        "tujuan-3": "Meningkatkan publikasi ilmiah dosen dan mahasiswa pada <strong>jurnal nasional terakreditasi (SINTA) dan jurnal internasional bereputasi</strong>.",
+        "tujuan-4": "Mewujudkan lulusan yang adaptif, berjiwa <strong>wirausaha edukasi (edupreneur)</strong>, dan berintegritas tinggi dalam memajukan peradaban sains.",
+        "prof-cat": "Prospek & Luaran",
+        "prof-title": "Profil Lulusan Pendidikan Fisika",
+        "prof-subtitle": "Lulusan program studi dipersiapkan untuk mengemban peran strategis di era transformasi digital sains dan pendidikan.",
+        "role-1-title": "Pendidik Fisika Profesional",
+        "role-1-desc": "Guru fisika/sains di SMP/MTs, SMA/MA, atau SMK yang cakap metodologi, menguasai substansi fisika modern, serta berjiwa inklusif dan islami.",
+        "role-2-title": "Peneliti Muda Pendidikan Sains",
+        "role-2-desc": "Peneliti yang kritis dalam mengeksplorasi inovasi media, asesmen komprehensif, etnofisika nusantara, dan kajian integrasi keislaman.",
+        "role-3-title": "Pengembang Media & Alat Lab",
+        "role-3-desc": "Kreator konten digital fisika, pengembang kit eksperimen, laboratorium virtual, dan instrumen pembelajaran berbasis komputasi modern.",
+        "role-4-title": "Edupreneur Sains & Teknologi",
+        "role-4-desc": "Wirausahawan bidang edukasi, bimbingan belajar sains, penyedia jasa training laboratorium sains, serta perintis startup media edukasi.",
+        "road-cat": "Peta Jalan Strategis",
+        "road-title": "Roadmap Pencapaian Visi 2034",
+        "road-subtitle": "Tahapan transformasi bertahap menuju pengakuan akademik berkelas dunia.",
+        "phase-1-label": "Fase Konsolidasi",
+        "phase-1-desc": "Pencapaian Akreditasi Unggul, restrukturisasi kurikulum berbasis OBE (Outcome-Based Education), dan penguatan riset etnofisika terintegrasi.",
+        "phase-2-label": "Fase Akselerasi Regional",
+        "phase-2-desc": "Sertifikasi internasional (AUN-QA), peningkatan publikasi Scopus, pertukaran pelajar/dosen se-Asia Tenggara, dan laboratorium terstandar.",
+        "phase-3-label": "Fase Reputasi Global",
+        "phase-3-desc": "Pusat rujukan global keilmuan pendidikan fisika ramah lingkungan dan integrasi keislaman, dengan jejaring universitas kelas dunia.",
+        "cross-title": "Jelajahi Profil Lengkap Program Studi",
+        "cross-desc": "Ketahui jajaran pengelola prodi dan rekam jejak historis Pendidikan Fisika UIN Sunan Kalijaga.",
+        "btn-struktur": "Struktur Organisasi",
+        "btn-sejarah": "Sejarah & Kurikulum",
+        "footer-copy": "&copy; 2026 Program Studi Pendidikan Fisika — Fakultas Ilmu Tarbiyah dan Keguruan<br />Universitas Islam Negeri Sunan Kalijaga Yogyakarta"
+      },
+      en: {
+        "brand-title": "Physics Education",
+        "brand-sub": "UIN Sunan Kalijaga Yogyakarta",
+        "nav-pilar": "6 Vision Pillars",
+        "nav-integrasi": "Integration-Interconnection",
+        "nav-misi": "Mission & Objectives",
+        "nav-profil": "Graduate Profiles",
+        "hero-badge": "Philosophical Foundation & Scientific Direction",
+        "hero-title-1": "Scientific Vision",
+        "hero-title-2": "Physics Education",
+        "hero-lead": "Strengthening the foundation of sustainable, transformative-inclusive, and tech-adaptive physics education, deeply rooted in local wisdom and inspired by universal Islamic values.",
+        "tag-akreditasi": "Excellent Accreditation (LAMDIK)",
+        "tag-paradigma": "Integration-Interconnection Paradigm",
+        "tag-reputasi": "Global Reputation 2034",
+        "statement-label": "Official Scientific Vision of the Study Program",
+        "target-badge": "Target Milestone 2034",
+        "core-vision-text": "“Developing <mark>sustainable</mark>, <mark>innovative-inclusive</mark>, <mark>technologically adaptive</mark>, and <mark>local-wisdom-oriented</mark> physics education science, inspired by <mark>Islamic values</mark> to realize an excellent and <mark>globally reputable</mark> civilization by 2034.”",
+        "quote-source": "Enacted by: <strong>Physics Education Study Program</strong> • Faculty of Tarbiyah and Education Sciences, UIN Sunan Kalijaga Yogyakarta",
+        "pillar-cat": "Core Meaning",
+        "pillar-title": "6 Pillars of the Scientific Vision",
+        "pillar-subtitle": "Every phrase in our scientific vision is translated into measurable academic excellence, curriculum, and research culture.",
+        "p1-title": "Sustainable",
+        "p1-desc": "Prioritizing long-term orientation, eco-friendly principles (green physics education), renewable energy awareness, and ecological resilience for future generations.",
+        "p1-h1": "Integration of climate change issues & energy conservation",
+        "p1-h2": "Research in eco-friendly physics laboratory equipment",
+        "p1-h3": "Cultivating environmental care character (eco-pedagogy)",
+        "p2-title": "Innovative & Inclusive",
+        "p2-desc": "Developing creative instructional media and methods that embrace student diversity and offer accessible STEM education for individuals with disabilities.",
+        "p2-h1": "Adaptive learning design & differentiation",
+        "p2-h2": "Development of tactile and audio-assisted physics media",
+        "p2-h3": "Disability-friendly campus & equitable learning opportunities",
+        "p3-title": "Technologically Adaptive",
+        "p3-desc": "Swiftly adopting digital technologies, computational sciences, IoT sensors, virtual simulations (PhET/Algodoo), and AI to enrich physics experiments.",
+        "p3-h1": "Microcontroller & digital sensor-based experiments",
+        "p3-h2": "Computational physics modeling with Python/MATLAB",
+        "p3-h3": "Development of mobile learning & Virtual Reality (VR)",
+        "p4-title": "Local Potential & Wisdom",
+        "p4-desc": "Exploring Indonesian local wisdom, ethno-physics (such as traditional gamelan acoustics, temple architecture, pinisi vessels), and local resources as meaningful contexts.",
+        "p4-h1": "Ethno-physics research on indigenous culture & heritage",
+        "p4-h2": "Utilization of indigenous materials for practical apparatus",
+        "p4-h3": "Reinforcing national identity through local wisdom",
+        "p5-title": "Inspired by Islamic Values",
+        "p5-desc": "Reflecting physical laws (sunnatullah) as divine cosmic verses (ayat kauniyah). Harmonizing objective scientific mastery with moral ethics and spirituality.",
+        "p5-h1": "Integration of revealed and natural verses in learning modules",
+        "p5-h2": "Character building and ethical leadership for future educators",
+        "p5-h3": "Application of scientific ethics anchored in maqasid shariah",
+        "p6-title": "Excellent & Globally Reputable",
+        "p6-desc": "Engaging in the international academic arena through reputable indexed publications (Scopus/WoS), global student-lecturer mobility, and international accreditation.",
+        "p6-h1": "Collaborative research & international visiting professors",
+        "p6-h2": "Regular publications in high-impact international journals",
+        "p6-h3": "Readiness of alumni to thrive in the global job market",
+        "integrasi-badge": "Signature Epistemological Foundation",
+        "integrasi-title": "Integration-Interconnection Paradigm",
+        "integrasi-lead": "UIN Sunan Kalijaga Physics Education rejects the dichotomy between science and religion, bridging scripture, empirical science, and humanistic philosophy.",
+        "triad-1-title": "Hadlarah an-Nash",
+        "triad-1-desc": "The Qur'an and Hadith as moral inspiration and ontological source guiding human intellect to examine God's cosmos humbly.",
+        "triad-2-title": "Hadlarah al-'Ilm",
+        "triad-2-desc": "Rigorous scientific inquiry, mathematics, laboratory empiricism, and experimental validation in decoding physical reality.",
+        "triad-3-title": "Hadlarah al-Falsafah",
+        "triad-3-desc": "Critical thinking, ethics of knowledge, and axiological considerations for human dignity, peace, and sustainable civilization.",
+        "mt-cat": "Operational Directions",
+        "mt-title": "Mission & Objectives",
+        "mt-subtitle": "Structured steps of Higher Education Tridharma to manifest our scientific vision into concrete impacts.",
+        "misi-heading": "Program Mission",
+        "misi-subheading": "Tridharma & Global Networking",
+        "misi-1": "<strong>High-Quality Education:</strong> Organizing student-centered, innovative physics learning based on integration-interconnection.",
+        "misi-2": "<strong>Applied Research & Ethno-physics:</strong> Fostering cutting-edge research oriented toward local potential and global competitiveness.",
+        "misi-3": "<strong>Sustainable Community Engagement:</strong> Disseminating physics educational innovations to teachers, madrasahs, and wider society.",
+        "misi-4": "<strong>Strategic Partnerships:</strong> Building strong collaborations with educational institutions, alumni, and global research centers.",
+        "tujuan-heading": "Educational Objectives",
+        "tujuan-subheading": "Learning Outcomes & Societal Impact",
+        "tujuan-1": "Producing physics education graduates who are <strong>professional, ethical</strong>, and equipped with modern inclusive pedagogical skills.",
+        "tujuan-2": "Developing innovative <strong>teaching media, experiment kits, and digital technologies</strong> based on local wisdom with intellectual property rights.",
+        "tujuan-3": "Elevating scientific publications in <strong>accredited national journals (SINTA) and reputable international journals (Scopus/WoS)</strong>.",
+        "tujuan-4": "Fostering adaptive graduates with strong <strong>educational entrepreneurship (edupreneurship)</strong> and dedication to advancing society.",
+        "prof-cat": "Career Prospects",
+        "prof-title": "Graduate Profiles",
+        "prof-subtitle": "Graduates are equipped for strategic roles in the digital era of science education.",
+        "role-1-title": "Professional Physics Educator",
+        "role-1-desc": "Skilled secondary school physics/science teacher mastering modern pedagogical approaches, inclusive methods, and Islamic values.",
+        "role-2-title": "Junior Science Education Researcher",
+        "role-2-desc": "Critical researcher actively investigating media innovation, comprehensive assessment, ethno-physics, and science-religion integration.",
+        "role-3-title": "Media & Laboratory Developer",
+        "role-3-desc": "Digital content creator, experimental kit designer, and virtual laboratory developer using modern computational frameworks.",
+        "role-4-title": "Science & Tech Edupreneur",
+        "role-4-desc": "Entrepreneur in science educational services, tutoring institutions, laboratory equipment consultancy, and edtech startups.",
+        "road-cat": "Strategic Roadmap",
+        "road-title": "Roadmap Toward 2034",
+        "road-subtitle": "Phased transformation toward world-class academic recognition.",
+        "phase-1-label": "Consolidation Phase",
+        "phase-1-desc": "Achieving Excellent Accreditation, restructuring Outcome-Based Education (OBE) curriculum, and enhancing integrated ethno-physics research.",
+        "phase-2-label": "Regional Acceleration Phase",
+        "phase-2-desc": "International accreditation (AUN-QA), increasing Scopus publications, ASEAN student exchange, and standardized labs.",
+        "phase-3-label": "Global Reputation Phase",
+        "phase-3-desc": "Global reference center for eco-friendly physics education and Islamic integration with world-class university networks.",
+        "cross-title": "Explore the Complete Study Program Profile",
+        "cross-desc": "Discover the organizational leadership and historical milestones of Physics Education UIN Sunan Kalijaga.",
+        "btn-struktur": "Organizational Structure",
+        "btn-sejarah": "History & Curriculum",
+        "footer-copy": "&copy; 2026 Physics Education Study Program — Faculty of Tarbiyah and Education Sciences<br />State Islamic University Sunan Kalijaga Yogyakarta"
+      }
+    };
+
+    function switchLanguage(lang) {
+      // Toggle button states
+      document.getElementById('btn-id').classList.toggle('active', lang === 'id');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      
+      // Update HTML lang attribute
+      document.documentElement.lang = lang;
+
+      // Update text elements
+      var data = translations[lang];
+      for (var key in data) {
+        var el = document.querySelector('[data-id="' + key + '"]');
+        if (el) {
+          el.innerHTML = data[key];
+        }
+      }
+    }
+
+    // Scroll Fade-in with native IntersectionObserver
+    document.addEventListener("DOMContentLoaded", function () {
+      var fadeElements = document.querySelectorAll(".vk-fade");
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+        );
+        fadeElements.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        fadeElements.forEach(function (el) {
+          el.classList.add("visible");
+        });
+      }
+    });
+  </script>
+</body>
+</html>
