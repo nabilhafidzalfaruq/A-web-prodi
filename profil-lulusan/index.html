@@ -144,6 +144,7 @@
         color: var(--text-primary);
         line-height: 1.6;
         box-sizing: border-box;
+        overflow: hidden;
       }
 
       .profil-lulusan-hijau * {
@@ -159,6 +160,19 @@
       .profil-header {
         text-align: center;
         margin-bottom: 60px;
+        animation: profil-fade-down 0.75s ease-out both;
+      }
+
+      .badge-header {
+        animation: profil-fade-up 0.65s 0.1s ease-out both;
+      }
+
+      .judul-profil {
+        animation: profil-fade-up 0.65s 0.2s ease-out both;
+      }
+
+      .sub-judul-profil {
+        animation: profil-fade-up 0.65s 0.3s ease-out both;
       }
 
       .badge-header {
@@ -214,6 +228,19 @@
         transition: all 0.3s ease;
         display: flex;
         flex-direction: column;
+        animation: profil-fade-up 0.7s ease-out both;
+      }
+
+      .profil-card:nth-child(1) {
+        animation-delay: 0.25s;
+      }
+
+      .profil-card:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+
+      .profil-card:nth-child(3) {
+        animation-delay: 0.55s;
       }
 
       .profil-card:hover {
@@ -315,6 +342,29 @@
         align-items: center;
         gap: 20px;
         box-shadow: 0 10px 30px rgba(1, 116, 123, 0.2);
+        animation: profil-fade-up 0.7s 0.7s ease-out both;
+      }
+
+      @keyframes profil-fade-up {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes profil-fade-down {
+        from {
+          opacity: 0;
+          transform: translateY(-18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       .footer-icon {
@@ -371,6 +421,21 @@
           flex-direction: column;
           text-align: center;
           gap: 15px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .profil-header,
+        .badge-header,
+        .judul-profil,
+        .sub-judul-profil,
+        .profil-card,
+        .profil-footer-note {
+          animation: none;
+        }
+
+        .profil-card {
+          transition: none;
         }
       }
     </style>
