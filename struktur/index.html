@@ -322,11 +322,10 @@
 
       /* Horizontal dashed line connector */
       .so-hline-dashed {
-        height: 2px;
-        border-top: 2px dashed var(--orange);
+        height: 0;
         flex: 1;
-        max-width: 48px;
-        align-self: center;
+        min-width: 0;
+        align-self: stretch;
       }
 
       /* TOP LEADERSHIP (Rektor & Dekan) */
@@ -334,7 +333,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        
       }
 
       .so-top-leadership .so-card {
@@ -349,6 +347,27 @@
         gap: 0;
         width: 100%;
         max-width: 980px;
+        position: relative;
+        isolation: isolate;
+      }
+
+      .so-connectors {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        pointer-events: none;
+      }
+
+      .so-connector-line {
+        fill: none;
+        stroke: var(--orange);
+        stroke-width: 2;
+        stroke-dasharray: 5 4;
+        stroke-linecap: round;
+        vector-effect: non-scaling-stroke;
       }
 
       .so-mid-side {
@@ -356,7 +375,10 @@
         flex-direction: column;
         align-items: center;
         gap: 14px;
-        flex-shrink: 0;
+        flex: 0 0 230px;
+        min-width: 0;
+        position: relative;
+        z-index: 1;
       }
 
       .so-mid-side .so-card {
@@ -367,7 +389,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        flex-shrink: 0;
+        flex: 0 0 auto;
+        position: relative;
+        z-index: 1;
       }
 
       .so-mid-center .so-card {
@@ -388,6 +412,7 @@
         flex-direction: column;
         align-items: center;
         position: relative;
+        z-index: 1;
       }
 
       .so-center-group::before {
@@ -610,6 +635,10 @@
           display: none;
         }
 
+        .so-connectors {
+          display: none;
+        }
+
         .so-mid-side {
           flex-direction: row;
           gap: 14px;
@@ -651,20 +680,6 @@
     </style>
   </head>
   <body>
-    <!-- Top Navigation Bar -->
-    <div style="background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 10px 24px; font-size: 13px;">
-      <div style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-        <a href="../index.html" style="color: #01747b; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          &larr; Beranda Portal
-        </a>
-        <div style="display: flex; gap: 16px; align-items: center;">
-          <a href="../visi-keilmuan/index.html" style="color: #475569; text-decoration: none; font-weight: 600;">Visi Keilmuan</a>
-          <a href="../sejarah/index.html" style="color: #475569; text-decoration: none; font-weight: 600;">Sejarah Prodi</a>
-          <a href="indexeng.html" style="color: #f08619; text-decoration: none; font-weight: 700; background: #fff5e9; padding: 3px 10px; border-radius: 20px;">English Version</a>
-        </div>
-      </div>
-    </div>
     <!-- ============================================================
      HERO HEADER
      ============================================================ -->
@@ -751,6 +766,15 @@
 
         <!-- ===================== MIDDLE ROW ===================== -->
         <div class="so-mid-row so-fade so-delay-2">
+          <svg
+            class="so-connectors"
+            aria-hidden="true"
+            preserveAspectRatio="none"
+          >
+            <path class="so-connector-line"></path>
+            <path class="so-connector-line"></path>
+            <path class="so-connector-line"></path>
+          </svg>
           <!-- LEFT WING: PSMP -->
           <div class="so-mid-side">
             <div class="so-card">
@@ -999,6 +1023,77 @@
           els.forEach(function (el) {
             el.classList.add("visible");
           });
+        }
+
+        var chartRow = document.querySelector(".so-mid-row");
+        var connectorSvg = chartRow && chartRow.querySelector(".so-connectors");
+        if (chartRow && connectorSvg) {
+          var connectorPaths =
+            connectorSvg.querySelectorAll(".so-connector-line");
+          var updateConnectors = function () {
+            if (window.matchMedia("(max-width: 900px)").matches) return;
+
+            var rowRect = chartRow.getBoundingClientRect();
+            var centralCard = chartRow.querySelector(".so-mid-center .so-card");
+            var leftCard = chartRow.querySelector(".so-mid-side .so-card");
+            var rightCards = chartRow.querySelectorAll(
+              ".so-mid-side:last-child .so-card",
+            );
+            if (!centralCard || !leftCard || rightCards.length < 2) return;
+
+            connectorSvg.setAttribute(
+              "viewBox",
+              "0 0 " + chartRow.clientWidth + " " + chartRow.clientHeight,
+            );
+
+            var centerRect = centralCard.getBoundingClientRect();
+            var leftRect = leftCard.getBoundingClientRect();
+            var centerY = centerRect.top + centerRect.height / 2 - rowRect.top;
+            var leftX = leftRect.right - rowRect.left;
+            var leftY = leftRect.top + leftRect.height / 2 - rowRect.top;
+            var leftRouteX = (leftX + centerRect.left - rowRect.left) / 2;
+            connectorPaths[0].setAttribute(
+              "d",
+              "M " +
+                leftX +
+                " " +
+                leftY +
+                " H " +
+                leftRouteX +
+                " V " +
+                centerY +
+                " H " +
+                (centerRect.left - rowRect.left),
+            );
+
+            rightCards.forEach(function (card, index) {
+              var cardRect = card.getBoundingClientRect();
+              var cardX = cardRect.left - rowRect.left;
+              var cardY = cardRect.top + cardRect.height / 2 - rowRect.top;
+              var routeX = (centerRect.right - rowRect.left + cardX) / 2;
+              connectorPaths[index + 1].setAttribute(
+                "d",
+                "M " +
+                  (centerRect.right - rowRect.left) +
+                  " " +
+                  centerY +
+                  " H " +
+                  routeX +
+                  " V " +
+                  cardY +
+                  " H " +
+                  cardX,
+              );
+            });
+          };
+
+          updateConnectors();
+          if ("ResizeObserver" in window) {
+            var connectorObserver = new ResizeObserver(updateConnectors);
+            connectorObserver.observe(chartRow);
+          } else {
+            window.addEventListener("resize", updateConnectors);
+          }
         }
       });
     </script>
