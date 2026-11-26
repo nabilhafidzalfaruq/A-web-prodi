@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#065F46">
+    <meta name="description" content="Aplikasi Reminder Otomatis berdesain Hijau Giok - Bisa di HP dan Laptop">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Reminder Giok">
+    <title>Reminder Giok — Pengingat Otomatis</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Decorative Jade Ambient Background -->
+    <div class="bg-decor" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="app-header">
+        <div class="header-inner">
+            <div class="header-top-row">
+                <button class="notif-pill" id="notifStatusBtn" type="button" title="Status & Tes Notifikasi">
+                    <span class="notif-dot"></span>
+                    <span id="notifStatusText">Cek Notifikasi</span>
+                </button>
+                <div class="header-tools">
+                    <button class="icon-tool-btn" id="btnSoundToggle" type="button" aria-label="Suara Alarm" title="Suara Alarm Aktif/Mati">
+                        <svg id="soundIconOn" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                        </svg>
+                        <svg id="soundIconOff" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <line x1="23" y1="9" x2="17" y2="15"></line>
+                            <line x1="17" y1="9" x2="23" y2="15"></line>
+                        </svg>
+                    </button>
+                    <button class="icon-tool-btn" id="btnBackup" type="button" aria-label="Transfer HP & Laptop" title="Backup & Transfer Data (HP ↔ Laptop)">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="header-main-row">
+                <div class="header-content">
+                    <div class="header-greeting" id="headerGreeting">Selamat Pagi</div>
+                    <h1>Reminder<span class="header-dot">.</span></h1>
+                    <p class="header-meta">
+                        <span id="currentDate"></span>
+                        <span class="meta-sep">•</span>
+                        <span id="liveClock" class="live-clock"></span>
+                    </p>
+                </div>
+                <button class="btn-add" id="btnAdd" type="button" aria-label="Tambah Reminder">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    <span class="btn-add-label">Baru</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="app-container">
+        <!-- Floating Stats Bar -->
+        <section class="stats-bar" aria-label="Ringkasan Reminder">
+            <div class="stat-card stat-total">
+                <div class="stat-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="3"></rect>
+                        <line x1="8" y1="10" x2="16" y2="10"></line>
+                        <line x1="8" y1="14" x2="13" y2="14"></line>
+                    </svg>
+                </div>
+                <div class="stat-data">
+                    <span class="stat-number" id="statTotal">0</span>
+                    <span class="stat-label">Total</span>
+                </div>
+            </div>
+
+            <div class="stat-card stat-active">
+                <div class="stat-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <polyline points="12 7 12 12 15.5 14"></polyline>
+                    </svg>
+                </div>
+                <div class="stat-data">
+                    <span class="stat-number" id="statActive">0</span>
+                    <span class="stat-label">Aktif</span>
+                </div>
+            </div>
+
+            <div class="stat-card stat-done">
+                <div class="stat-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                </div>
+                <div class="stat-data">
+                    <span class="stat-number" id="statDone">0</span>
+                    <span class="stat-label">Selesai</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search & Filter Controls -->
+        <section class="controls-section">
+            <div class="search-box">
+                <svg class="search-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="searchInput" placeholder="Cari reminder..." autocomplete="off">
+                <button class="btn-clear-search" id="btnClearSearch" type="button" aria-label="Hapus pencarian" style="display:none;">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="filter-tabs" role="tablist">
+                <button class="filter-tab active" data-filter="all" role="tab">
+                    Semua <span class="tab-count" id="countAll">0</span>
+                </button>
+                <button class="filter-tab" data-filter="active" role="tab">
+                    Aktif <span class="tab-count" id="countActive">0</span>
+                </button>
+                <button class="filter-tab" data-filter="today" role="tab">
+                    Hari Ini <span class="tab-count" id="countToday">0</span>
+                </button>
+                <button class="filter-tab" data-filter="done" role="tab">
+                    Selesai <span class="tab-count" id="countDone">0</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Reminder List -->
+        <main class="reminder-list" id="reminderList">
+            <!-- Rendered by app.js -->
+        </main>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState" style="display:none;">
+            <div class="empty-illustration">
+                <div class="empty-ring"></div>
+                <div class="empty-circle">
+                    <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        <path d="M12 2v2"></path>
+                    </svg>
+                </div>
+            </div>
+            <h3 id="emptyTitle">Belum ada reminder</h3>
+            <p id="emptyDesc">Ketuk tombol <strong>+ Baru</strong> di atas untuk membuat pengingat otomatis pertamamu.</p>
+        </div>
+    </div>
+
+    <!-- Modal Add / Edit Form -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-handle"></div>
+            <div class="modal-header">
+                <div class="modal-title-wrap">
+                    <span class="modal-badge-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                    </span>
+                    <h2 id="modalTitle">Tambah Reminder</h2>
+                </div>
+                <button class="btn-close" id="btnCloseModal" type="button" aria-label="Tutup">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <form id="reminderForm">
+                <div class="form-group">
+                    <label for="inputTitle">Judul Pengingat <span class="required">*</span></label>
+                    <input type="text" id="inputTitle" placeholder="Contoh: Rapat evaluasi proyek" required maxlength="100">
+                </div>
+                <div class="form-group">
+                    <label for="inputDesc">Catatan Tambahan</label>
+                    <textarea id="inputDesc" placeholder="Tulis detail atau link meeting (opsional)" rows="2" maxlength="500"></textarea>
+                </div>
+                <div class="form-row form-row-datetime">
+                    <div class="form-group">
+                        <label for="inputDate">Tanggal <span class="required">*</span></label>
+                        <input type="date" id="inputDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputHour">Waktu (AM / PM) <span class="required">*</span></label>
+                        <div class="time-picker-12h">
+                            <select id="inputHour" aria-label="Jam" required></select>
+                            <span class="time-colon">:</span>
+                            <select id="inputMinute" aria-label="Menit" required></select>
+                            <div class="ampm-toggle" role="group" aria-label="Pilih AM atau PM">
+                                <button type="button" class="ampm-btn active" data-period="AM" id="btnAm">AM</button>
+                                <button type="button" class="ampm-btn" data-period="PM" id="btnPm">PM</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputRepeat">Pengulangan Otomatis</label>
+                    <select id="inputRepeat">
+                        <option value="none">Sekali saja (tidak diulangi)</option>
+                        <option value="daily">Setiap Hari</option>
+                        <option value="weekly">Setiap Minggu</option>
+                        <option value="monthly">Setiap Bulan</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Kategori</label>
+                    <div class="category-options">
+                        <label class="category-option">
+                            <input type="radio" name="category" value="pribadi" checked>
+                            <span class="category-badge cat-pribadi">
+                                <span class="cat-dot"></span> Pribadi
+                            </span>
+                        </label>
+                        <label class="category-option">
+                            <input type="radio" name="category" value="kerja">
+                            <span class="category-badge cat-kerja">
+                                <span class="cat-dot"></span> Kerja
+                            </span>
+                        </label>
+                        <label class="category-option">
+                            <input type="radio" name="category" value="kuliah">
+                            <span class="category-badge cat-kuliah">
+                                <span class="cat-dot"></span> Kuliah
+                            </span>
+                        </label>
+                        <label class="category-option">
+                            <input type="radio" name="category" value="lainnya">
+                            <span class="category-badge cat-lainnya">
+                                <span class="cat-dot"></span> Lainnya
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <input type="hidden" id="editId" value="">
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="btnCancel">Batal</button>
+                    <button type="submit" class="btn btn-primary">
+                        <span id="btnSubmitText">Simpan Reminder</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- In-App Alarm Popup (when reminder triggers while app is open) -->
+    <div class="alarm-overlay" id="alarmOverlay">
+        <div class="alarm-card" role="alertdialog" aria-modal="true" aria-labelledby="alarmTitle">
+            <div class="alarm-pulse-ring">
+                <div class="alarm-bell-circle">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="alarm-tag">WAKTUNYA TIBA</div>
+            <h2 id="alarmTitle">Judul Reminder</h2>
+            <p class="alarm-desc" id="alarmDesc"></p>
+            <div class="alarm-time-chip" id="alarmTimeLabel">09:00</div>
+            <div class="alarm-actions">
+                <button type="button" class="btn btn-secondary" id="btnAlarmSnooze">Tunda 10 Mnt</button>
+                <button type="button" class="btn btn-primary" id="btnAlarmDone">Tandai Selesai</button>
+            </div>
+            <button type="button" class="alarm-dismiss-link" id="btnAlarmClose">Tutup tanpa mengubah</button>
+        </div>
+    </div>
+
+    <!-- Backup & Transfer Modal (HP ↔ Laptop) -->
+    <div class="modal-overlay" id="syncOverlay">
+        <div class="modal modal-sync" role="dialog" aria-modal="true" aria-labelledby="syncTitle">
+            <div class="modal-handle"></div>
+            <div class="modal-header">
+                <div class="modal-title-wrap">
+                    <span class="modal-badge-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </span>
+                    <h2 id="syncTitle">Transfer Data HP ↔ Laptop</h2>
+                </div>
+                <button class="btn-close" id="btnCloseSync" type="button" aria-label="Tutup">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="sync-body">
+                <p class="sync-info">
+                    Data tersimpan aman di perangkat ini. Untuk memindahkan reminder antara <strong>HP</strong> dan <strong>Laptop</strong>, salin atau ekspor data lalu impor di perangkat tujuan.
+                </p>
+
+                <div class="sync-section">
+                    <label>1. Ekspor dari perangkat ini</label>
+                    <div class="sync-btn-row">
+                        <button type="button" class="btn btn-secondary btn-sync" id="btnCopyBackup">
+                            Salin Kode Backup
+                        </button>
+                        <button type="button" class="btn btn-primary btn-sync" id="btnExportJson">
+                            Unduh File .JSON
+                        </button>
+                    </div>
+                </div>
+
+                <div class="sync-divider"></div>
+
+                <div class="sync-section">
+                    <label for="importTextarea">2. Impor dari perangkat lain</label>
+                    <textarea id="importTextarea" rows="3" placeholder="Tempel kode backup JSON di sini, atau pilih file .json..."></textarea>
+                    <div class="sync-file-row">
+                        <label class="file-upload-btn" for="importFileInput">
+                            Pilih File .JSON
+                        </label>
+                        <input type="file" id="importFileInput" accept=".json,application/json" style="display:none;">
+                    </div>
+                    <div class="sync-btn-row">
+                        <button type="button" class="btn btn-secondary btn-sync" id="btnImportMerge">
+                            Gabungkan Data
+                        </button>
+                        <button type="button" class="btn btn-primary btn-sync" id="btnImportReplace">
+                            Ganti Semua
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Permission Banner -->
+    <div class="notif-banner" id="notifBanner" style="display:none;">
+        <div class="notif-banner-content">
+            <div class="notif-banner-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+            </div>
+            <div class="notif-banner-text">
+                <strong>Aktifkan Notifikasi Otomatis</strong>
+                <span>Izinkan pengingat muncul di HP &amp; laptop saat waktunya tiba</span>
+            </div>
+            <div class="notif-banner-actions">
+                <button class="btn btn-small btn-ghost" id="btnDismissNotif" type="button">Nanti</button>
+                <button class="btn btn-small btn-primary" id="btnEnableNotif" type="button">Aktifkan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="status" aria-live="polite">
+        <span id="toastMessage"></span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
